@@ -1,11 +1,23 @@
 package com.kassirov.generators;
 
-import com.kassirov.models.CurrentDate;
-import com.kassirov.models.Date;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Random;
 
 public class DateGenerator {
 	
-	public Date generate() {
-		return CurrentDate.getDate();
+	Date date = new Date();
+	
+	Calendar cal = Calendar.getInstance();
+	
+	Random random = new Random();
+	
+	public DateGenerator() {
+		cal.setTime(date);
+	}
+	
+	public com.kassirov.models.Date generate() {
+		cal.set(Calendar.SECOND, cal.SECOND + random.nextInt(500));
+		return new com.kassirov.models.Date(cal.getTime());
 	}
 }

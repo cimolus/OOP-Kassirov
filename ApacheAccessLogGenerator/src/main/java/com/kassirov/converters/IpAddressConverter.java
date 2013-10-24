@@ -2,7 +2,7 @@ package com.kassirov.converters;
 
 import com.kassirov.models.IpAddress;
 
-public class IpAddressConverter implements IModelConverter {
+public class IpAddressConverter {
 
 	public String convertToString(Object object) {
 		IpAddress ip = (IpAddress) object;

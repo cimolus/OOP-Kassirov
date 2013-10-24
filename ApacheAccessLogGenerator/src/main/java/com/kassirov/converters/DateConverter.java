@@ -2,7 +2,7 @@ package com.kassirov.converters;
 
 import com.kassirov.models.Date;
 
-public class DateConverter implements IModelConverter {
+public class DateConverter{
 
 
 	public String convertToString(Object object) {

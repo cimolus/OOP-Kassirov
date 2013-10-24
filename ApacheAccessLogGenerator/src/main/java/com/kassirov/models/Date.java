@@ -1,12 +1,16 @@
 package com.kassirov.models;
 
+import java.util.Calendar;
+
 public class Date {
-	private byte day;
+	private int day;
 	private String month;
 	private int year;
-	private byte hours;
-	private byte minits;
-	private byte seconds;
+	private int hours;
+	private int minits;
+	private int seconds;
+	
+	private Calendar calendar = Calendar.getInstance();
 	
 	public Date(byte day, String month , int year, byte hours, byte minits, byte seconds) {
 		this.day = day;
@@ -16,8 +20,19 @@ public class Date {
 		this.minits = minits;
 		this.seconds = seconds;
 	}
+	
+	public Date(java.util.Date date) {
+		calendar.setTime(date);
+		this.seconds = calendar.get(calendar.SECOND);
+		this.minits = calendar.get(calendar.MINUTE);
+		this.hours = calendar.get(calendar.HOUR);
+		this.year = calendar.get(calendar.YEAR);
+		this.month = getMonthFromInt(calendar.get(calendar.MONTH));
+		this.day = calendar.get(calendar.DAY_OF_MONTH);
+		
+	}
 
-	public byte getDay() {
+	public int getDay() {
 		return day;
 	}
 
@@ -41,7 +56,7 @@ public class Date {
 		this.year = year;
 	}
 
-	public byte getHours() {
+	public int getHours() {
 		return hours;
 	}
 
@@ -49,7 +64,7 @@ public class Date {
 		this.hours = hours;
 	}
 
-	public byte getMinits() {
+	public int getMinits() {
 		return minits;
 	}
 
@@ -57,7 +72,7 @@ public class Date {
 		this.minits = minits;
 	}
 
-	public byte getSeconds() {
+	public int getSeconds() {
 		return seconds;
 	}
 
@@ -65,7 +80,23 @@ public class Date {
 		this.seconds = seconds;
 	}
 	
-	
+	private static String getMonthFromInt(int month) {
+		switch(month) {
+			case 0: return "JUNUARY";
+			case 1: return "FEBRUARY";
+			case 2: return "MARCH";
+			case 3: return "APRIL";
+			case 4: return "MAY";
+			case 5: return "JUNE";
+			case 6: return "JULY";
+			case 7: return "AUGUST";
+			case 8: return "SEPTEMBER";
+			case 9: return "OCTOBER";
+			case 10: return "NOVEMBER";
+			case 11: return "DECEMBER";
+		}
+		return null;
+	}
 	
 	
 	

@@ -7,31 +7,34 @@ import java.util.Map;
 
 import com.kassirov.models.Log;
 
-public class LogConverter implements IModelConverter{
+public class LogConverter{
 	
-	//private List<IModelConverter> converters = new ArrayList<IModelConverter>();
-	private Map<String,IModelConverter> converters = new HashMap<String, IModelConverter>();
+	IpAddressConverter ipAddressConverter = new IpAddressConverter();
+	
+	DateConverter dateConverter = new DateConverter();
+	
+	RequestConverter requestConverter = new RequestConverter();
+	
+	HttpStatusConverter httpStatusConverter = new HttpStatusConverter();
+	
+	ByteConverter byteConverter = new ByteConverter();
 	
 	public LogConverter() {
-		converters.put( "IpAddress" , new IpAddressConverter() );
-		converters.put( "Date", new DateConverter() );
-		converters.put( "Request", new RequestConverter() );
-		converters.put( "HttpStatus", new HttpStatusConverter() );
-		converters.put( "Byte", new ByteConverter() );
+
 	}
 
 	public String convertToString(Object object) {
 		StringBuilder sb = new StringBuilder();
 		Log log = (Log) object;
-		sb.append(converters.get("IpAddress").convertToString(log.getIpAddress()));
+		sb.append(ipAddressConverter.convertToString(log.getIpAddress()));
 		sb.append(" ");
-		sb.append(converters.get("Date").convertToString(log.getDate()));
+		sb.append(dateConverter.convertToString(log.getDate()));
 		sb.append(" ");
-		sb.append(converters.get("Request").convertToString(log.getRequest()));
+		sb.append(requestConverter.convertToString(log.getRequest()));
 		sb.append(" ");
-		sb.append(converters.get("HttpStatus").convertToString(log.getHttpStatus()));
+		sb.append(httpStatusConverter.convertToString(log.getHttpStatus()));
 		sb.append(" ");
-		sb.append(converters.get("Byte").convertToString(log.getBytes()));
+		sb.append(byteConverter.convertToString(log.getBytes()));
 		return sb.toString();
 	}
 	

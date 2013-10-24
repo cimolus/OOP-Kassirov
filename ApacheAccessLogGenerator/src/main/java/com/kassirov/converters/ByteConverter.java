@@ -1,6 +1,6 @@
 package com.kassirov.converters;
 
-public class ByteConverter implements IModelConverter{
+public class ByteConverter{
 
 
 	public String convertToString(Object object) {

@@ -2,7 +2,7 @@ package com.kassirov.converters;
 
 import com.kassirov.models.Request;
 
-public class RequestConverter implements IModelConverter {
+public class RequestConverter {
 
 	public String convertToString(Object object) {
 		Request reqeust = (Request) object;
