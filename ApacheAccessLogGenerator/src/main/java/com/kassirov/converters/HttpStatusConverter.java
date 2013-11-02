@@ -4,8 +4,7 @@ import com.kassirov.models.HttpStatus;
 
 public class HttpStatusConverter{
 
-	public String convertToString(Object object) {
-		HttpStatus httpStatus = (HttpStatus) object;
+	public String convertToString(HttpStatus httpStatus) {
 		return httpStatus.getCode() + " " + httpStatus.getClarification();
 	}
 

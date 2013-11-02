@@ -14,16 +14,14 @@ public class LogGenerator {
 	
 	private HttpStatusGenerator httpStatusGenerator = new HttpStatusGenerator();
 	
-	private ByteGenerator byteGenerator = new ByteGenerator();
+	private SizeGenerator sizeGenerator = new SizeGenerator();
 	
 	public Log generate() {
-		log = new Log();
-		log.setIpAddress(ipAddressGenerator.generate());
-		log.setDate(dateGenerator.generate());
-		log.setRequest(requestGenerator.generate());
-		log.setHttpStatus(httpStatusGenerator.generate());
-		log.setBytes(byteGenerator.generate());
-		return log;
+		return new Log(ipAddressGenerator.generate(),
+				dateGenerator.generate(),
+				requestGenerator.generate(),
+				httpStatusGenerator.generate(),
+				sizeGenerator.generate());
 	}
 
 }

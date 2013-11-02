@@ -17,15 +17,14 @@ public class LogConverter{
 	
 	HttpStatusConverter httpStatusConverter = new HttpStatusConverter();
 	
-	ByteConverter byteConverter = new ByteConverter();
+	SizeConverter sizeConverter = new SizeConverter();
 	
 	public LogConverter() {
 
 	}
 
-	public String convertToString(Object object) {
+	public String convertToString(Log log) {
 		StringBuilder sb = new StringBuilder();
-		Log log = (Log) object;
 		sb.append(ipAddressConverter.convertToString(log.getIpAddress()));
 		sb.append(" ");
 		sb.append(dateConverter.convertToString(log.getDate()));
@@ -34,7 +33,7 @@ public class LogConverter{
 		sb.append(" ");
 		sb.append(httpStatusConverter.convertToString(log.getHttpStatus()));
 		sb.append(" ");
-		sb.append(byteConverter.convertToString(log.getBytes()));
+		sb.append(sizeConverter.convertToString(log.getSize()));
 		return sb.toString();
 	}
 	

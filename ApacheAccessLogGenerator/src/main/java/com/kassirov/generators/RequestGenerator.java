@@ -5,21 +5,20 @@ import java.util.Random;
 import com.kassirov.models.Request;
 
 public class RequestGenerator {
-	
-	private Request request;
-	
+
 	private Random random = new Random();
 	
 	public Request generate() {
-		request = new Request();
+		String requestType;
+		String requestContent;
 		if (random.nextInt(2) == 0) {
-			request.setRequestType("GET");
-		} else request.setRequestType("POST");
+			requestType = "GET";
+		} else requestType = "POST";
 		
 		if (random.nextInt(2) ==  0) {
-			request.setRequestContent("HTTP");
-		} else request.setRequestContent("HTTPS");
-		return request;
+			requestContent = "HTTP";
+		} else requestContent = "HTTPS";
+		return new Request(requestType, requestContent, random.nextInt(2));
 	}
 
 }

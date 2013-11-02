@@ -11,7 +11,12 @@ import java.util.Set;
 public class HttpStatus {
 	private int code;
 	private String clarification;
-
+	
+	public HttpStatus(int code, String clarification) {
+		this.code = code;
+		this.clarification = clarification;
+	}
+	
 	public int getCode() {
 		return code;
 	}

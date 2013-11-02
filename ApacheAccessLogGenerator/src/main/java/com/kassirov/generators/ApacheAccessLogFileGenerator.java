@@ -27,10 +27,9 @@ public class ApacheAccessLogFileGenerator {
 		for( int i = 0; i < count; i++ ) {
 			Log log = logGenerator.generate();
 			logs.add(log);
-			String temp = logConverter.convertToString(log);
-			System.out.println(temp);
-			writer.write(temp);
+			System.out.println(logConverter.convertToString(log));
 		}
+		writer.write(logs);
 	}
 	
 	

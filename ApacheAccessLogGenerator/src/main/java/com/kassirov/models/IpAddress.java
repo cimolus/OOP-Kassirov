@@ -8,6 +8,12 @@ public class IpAddress {
 	private int part3;
 	private int part4;
 	
+	public IpAddress( int part1, int part2, int part3, int part4 ) {
+		this.part1 = part1;
+		this.part2 = part2;
+		this.part3 = part3;
+		this.part4 = part4;
+	}
 	
 	public int getPart1() {
 		return part1;

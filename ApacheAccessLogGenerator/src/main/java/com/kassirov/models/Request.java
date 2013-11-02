@@ -7,7 +7,13 @@ public class Request {
 	private String requestContent;
 	private int version = 1;
 	private int subversion;
-
+	
+	public Request( String requestType, String requestContent, int subversion ) {
+		this.requestType = requestType;
+		this.requestContent = requestContent;
+		this.subversion = subversion;
+	}
+	
 	public String getRequestType() {
 		return requestType;
 	}

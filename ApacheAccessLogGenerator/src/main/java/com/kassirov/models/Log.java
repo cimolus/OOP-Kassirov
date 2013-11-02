@@ -6,7 +6,15 @@ public class Log {
 	private Date date;
 	private Request request;
 	private HttpStatus httpStatus;
-	private int bytes;
+	private Size size;
+	
+	public Log(IpAddress ipAddress,Date date, Request request, HttpStatus httpStatus, Size size) {
+		this.ipAddress = ipAddress;
+		this.date = date;
+		this.request = request;
+		this.httpStatus = httpStatus;
+		this.size = size;
+	}
 	
 	public IpAddress getIpAddress() {
 		return ipAddress;
@@ -40,13 +48,13 @@ public class Log {
 		this.httpStatus = httpStatus;
 	}
 
-	public int getBytes() {
-		return bytes;
+	public Size getSize() {
+		return size;
 	}
 
-	public void setBytes(int bytes) {
-		this.bytes = bytes;
-	}
+	public void setSize(Size size) {
+		this.size = size;
+	}	
 	
 	
 	

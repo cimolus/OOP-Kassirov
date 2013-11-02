@@ -4,10 +4,9 @@ import com.kassirov.models.Request;
 
 public class RequestConverter {
 
-	public String convertToString(Object object) {
-		Request reqeust = (Request) object;
-		return "\"" + reqeust.getRequestType() + "/" + reqeust.getRequestContent() + "/"
-				+ reqeust.getVersion() + "." + reqeust.getSubversion() + "\"";
+	public String convertToString(Request request) {
+		return "\"" + request.getRequestType() + "/" + request.getRequestContent() + "/"
+				+ request.getVersion() + "." + request.getSubversion() + "\"";
 	}
 
 }
