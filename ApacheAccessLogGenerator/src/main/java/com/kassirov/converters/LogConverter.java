@@ -1,39 +1,31 @@
 package com.kassirov.converters;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.kassirov.models.Log;
 
 public class LogConverter{
 	
-	IpAddressConverter ipAddressConverter = new IpAddressConverter();
+	private IPConverter ipConverter = new IPConverter();
 	
-	DateConverter dateConverter = new DateConverter();
+	private DateConverter dateConverter = new DateConverter();
 	
-	RequestConverter requestConverter = new RequestConverter();
+	private RequestConverter requestConverter = new RequestConverter();
 	
-	HttpStatusConverter httpStatusConverter = new HttpStatusConverter();
-	
-	SizeConverter sizeConverter = new SizeConverter();
-	
-	public LogConverter() {
-
-	}
+	private ResponseConverter responseConverter = new ResponseConverter();
 
 	public String convertToString(Log log) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(ipAddressConverter.convertToString(log.getIpAddress()));
-		sb.append(" ");
+		
+		sb.append(ipConverter.convertToString(log.getIp()));
+		sb.append("--");
+		sb.append("[");
 		sb.append(dateConverter.convertToString(log.getDate()));
-		sb.append(" ");
+		sb.append("] ");
+		sb.append("\"");
 		sb.append(requestConverter.convertToString(log.getRequest()));
+		sb.append("\"");
 		sb.append(" ");
-		sb.append(httpStatusConverter.convertToString(log.getHttpStatus()));
-		sb.append(" ");
-		sb.append(sizeConverter.convertToString(log.getSize()));
+		sb.append(responseConverter.convertToString(log.getResponse()));
+		
 		return sb.toString();
 	}
 	

@@ -6,9 +6,21 @@ public class DateConverter{
 
 
 	public String convertToString(Date date) {
-		return "[" + date.getDay() + "/" + date.getMonth()
-				+ "/" + date.getYear() + " " + date.getHours()
-				+ ":" + date.getMinits() + ":" + date.getSeconds() +  " 0000]";
+		StringBuilder sb = new StringBuilder();
+		sb.append(date.getDay());
+		sb.append("/");
+		sb.append(date.getMonth());
+		sb.append("/");
+		sb.append(date.getYear());
+		sb.append(":");
+		sb.append(date.getHours());
+		sb.append(":");
+		sb.append(date.getMinits());
+		sb.append(":");
+		sb.append(date.getSeconds());
+		sb.append(" +");
+		sb.append(date.getTimeOffset());
+		return sb.toString();
 	}
 
 }

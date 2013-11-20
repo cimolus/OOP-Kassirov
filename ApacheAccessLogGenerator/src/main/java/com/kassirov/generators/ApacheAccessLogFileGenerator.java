@@ -6,11 +6,10 @@ import java.util.List;
 import com.kassirov.converters.LogConverter;
 import com.kassirov.models.Log;
 import com.kassirov.writers.IWriter;
-import com.kassirov.writers.TxtFileWriter;
 
 public class ApacheAccessLogFileGenerator {
 	
-	private IWriter writer = new TxtFileWriter();
+	private IWriter writer;
 	
 	private LogGenerator logGenerator = new LogGenerator();
 	

@@ -1,50 +1,40 @@
 package com.kassirov.models;
 
-import java.util.Random;
-
 public class Request {
-	private String requestType;
-	private String requestContent;
-	private int version = 1;
-	private int subversion;
 	
-	public Request( String requestType, String requestContent, int subversion ) {
-		this.requestType = requestType;
-		this.requestContent = requestContent;
-		this.subversion = subversion;
-	}
+	private RequestHttpMethod requestHttpMethod;
 	
-	public String getRequestType() {
-		return requestType;
-	}
-
-	public void setRequestType(String requestType) {
-		this.requestType = requestType;
-	}
-
-	public String getRequestContent() {
-		return requestContent;
-	}
-
-	public void setRequestContent(String requestContent) {
-		this.requestContent = requestContent;
-	}
-
-	public int getVersion() {
-		return version;
-	}
-
-	public void setVersion(int version) {
-		this.version = version;
-	}
-
-	public int getSubversion() {
-		return subversion;
-	}
-
-	public void setSubversion(int subversion) {
-		this.subversion = subversion;
+	private RequestUrl requestUrl;
+	
+	private RequestVersion requestVersion;
+	
+	public Request(RequestHttpMethod requestHttpMethod, RequestUrl requestUrl, RequestVersion requestVersion) {
+		this.requestHttpMethod = requestHttpMethod;
+		this.requestUrl = requestUrl;
+		this.requestVersion = requestVersion;
 	}
 	
-	
+	public RequestHttpMethod getRequestHttpMethod() {
+		return requestHttpMethod;
+	}
+
+	public void setRequestHttpMethod(RequestHttpMethod requestHttpMethod) {
+		this.requestHttpMethod = requestHttpMethod;
+	}
+
+	public RequestUrl getRequestUrl() {
+		return requestUrl;
+	}
+
+	public void setRequestUrl(RequestUrl requestUrl) {
+		this.requestUrl = requestUrl;
+	}
+
+	public RequestVersion getRequestVersion() {
+		return requestVersion;
+	}
+
+	public void setRequestVersion(RequestVersion requestVersion) {
+		this.requestVersion = requestVersion;
+	}
 }

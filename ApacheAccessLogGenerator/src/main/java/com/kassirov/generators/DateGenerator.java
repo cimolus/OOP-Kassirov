@@ -16,6 +16,7 @@ public class DateGenerator {
 		cal.setTime(date);
 	}
 	
+	@SuppressWarnings("static-access")
 	public com.kassirov.models.Date generate() {
 		cal.set(Calendar.SECOND, cal.SECOND + random.nextInt(500));
 		return new com.kassirov.models.Date(cal.getTime());

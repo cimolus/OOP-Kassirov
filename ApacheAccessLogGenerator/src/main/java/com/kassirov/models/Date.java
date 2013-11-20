@@ -9,6 +9,7 @@ public class Date {
 	private int hours;
 	private int minits;
 	private int seconds;
+	private int timeOffset = 0;
 	
 	private Calendar calendar = Calendar.getInstance();
 	
@@ -79,6 +80,14 @@ public class Date {
 
 	public void setSeconds(byte seconds) {
 		this.seconds = seconds;
+	}
+
+	public int getTimeOffset() {
+		return timeOffset;
+	}
+
+	public void setTimeOffset(int timeOffset) {
+		this.timeOffset = timeOffset;
 	}
 	
 }

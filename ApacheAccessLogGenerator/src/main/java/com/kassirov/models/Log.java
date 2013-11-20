@@ -2,59 +2,51 @@ package com.kassirov.models;
 
 
 public class Log {
-	private IpAddress ipAddress;
+	private IP ip;
 	private Date date;
 	private Request request;
-	private HttpStatus httpStatus;
-	private Size size;
+	private Response response;
 	
-	public Log(IpAddress ipAddress,Date date, Request request, HttpStatus httpStatus, Size size) {
-		this.ipAddress = ipAddress;
+	public Log( IP ip, Date date, Request request, Response response ) {
+		this.ip = ip;
 		this.date = date;
 		this.request = request;
-		this.httpStatus = httpStatus;
-		this.size = size;
+		this.response = response;
 	}
-	
-	public IpAddress getIpAddress() {
-		return ipAddress;
+
+	public IP getIp() {
+		return ip;
 	}
-	
-	public void setIpAddress(IpAddress ipAddress) {
-		this.ipAddress = ipAddress;
+
+	public void setIp(IP ip) {
+		this.ip = ip;
 	}
-	
+
 	public Date getDate() {
 		return date;
 	}
-	
+
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	
+
 	public Request getRequest() {
 		return request;
 	}
-	
+
 	public void setRequest(Request request) {
 		this.request = request;
 	}
-	
-	public HttpStatus getHttpStatus() {
-		return httpStatus;
-	}
-	
-	public void setHttpStatus(HttpStatus httpStatus) {
-		this.httpStatus = httpStatus;
+
+	public Response getResponse() {
+		return response;
 	}
 
-	public Size getSize() {
-		return size;
+	public void setResponse(Response response) {
+		this.response = response;
 	}
-
-	public void setSize(Size size) {
-		this.size = size;
-	}	
+	
+	
 	
 	
 	

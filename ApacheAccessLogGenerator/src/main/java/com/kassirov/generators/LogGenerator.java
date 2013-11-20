@@ -4,24 +4,19 @@ import com.kassirov.models.Log;
 
 public class LogGenerator {
 	
-	private Log log;
-	
-	private IpAddressGenerator ipAddressGenerator = new IpAddressGenerator();
+	private IPGenerator iPGenerator = new IPGenerator();
 	
 	private DateGenerator dateGenerator = new DateGenerator();
 	
 	private RequestGenerator requestGenerator = new RequestGenerator();
 	
-	private HttpStatusGenerator httpStatusGenerator = new HttpStatusGenerator();
-	
-	private SizeGenerator sizeGenerator = new SizeGenerator();
+	private ResponseGenerator responseGenerator = new ResponseGenerator();
 	
 	public Log generate() {
-		return new Log(ipAddressGenerator.generate(),
+		return new Log(iPGenerator.generate(),
 				dateGenerator.generate(),
 				requestGenerator.generate(),
-				httpStatusGenerator.generate(),
-				sizeGenerator.generate());
+				responseGenerator.generate());
 	}
 
 }
